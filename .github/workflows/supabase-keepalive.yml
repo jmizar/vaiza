@@ -1,0 +1,17 @@
+name: Supabase keep-alive
+
+# Free Supabase projects pause after 7 days without activity. One tiny read a day prevents it.
+# Inactive until the repo variable SUPABASE_URL and secret SUPABASE_ANON_KEY exist (milestone M2).
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    if: ${{ vars.SUPABASE_URL != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -fsS "${{ vars.SUPABASE_URL }}/rest/v1/destinations?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" > /dev/null && echo "Supabase is awake"

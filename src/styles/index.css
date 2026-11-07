@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import './tokens.css';
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-bg font-sans text-body text-ink;
+    /* iOS-style: no grey tap flash, safe areas respected. */
+    -webkit-tap-highlight-color: transparent;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
+  /* Visible focus for keyboard and switch-control users; hidden for touch. */
+  :focus-visible {
+    outline: 2px solid var(--color-info);
+    outline-offset: 2px;
+  }
+}
+
+/* The app is phone-first. On wider screens it sits in a centred phone-width column. */
+.app-column {
+  max-width: var(--size-app-max-width);
+  margin-inline: auto;
+  min-height: 100dvh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

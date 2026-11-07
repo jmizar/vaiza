@@ -1,0 +1,41 @@
+name: Figma sync
+
+# Run from the Actions tab ("Run workflow"), or by pushing a change to design/sync-request.txt
+# (that's how Claude triggers it). Uses ~3 of the ~20 monthly Figma API calls on the Starter plan.
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Only these Figma pages (comma-separated). Empty = all.'
+        required: false
+  push:
+    branches: [main]
+    paths: ['design/sync-request.txt']
+
+permissions:
+  contents: write
+
+concurrency: figma-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pull frames and file data from Figma
+        run: node scripts/figma-sync.mjs
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_KEY: ${{ vars.FIGMA_FILE_KEY }}
+          FIGMA_PAGES: ${{ inputs.pages }}
+      - name: Commit design exports
+        run: |
+          git config user.name "vaiza-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add design/figma design/frames
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "design: sync from Figma"
+          git push
