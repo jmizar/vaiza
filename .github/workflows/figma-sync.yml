@@ -8,6 +8,9 @@ on:
       pages:
         description: 'Only these Figma pages (comma-separated). Empty = all.'
         required: false
+      svg_ids:
+        description: 'Node ids to export as SVG assets (comma-separated). Optional.'
+        required: false
   push:
     branches: [main]
     paths: ['design/sync-request.txt']
@@ -29,12 +32,14 @@ jobs:
         run: node scripts/figma-sync.mjs
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-          FIGMA_FILE_KEY: ${{ vars.FIGMA_FILE_KEY }}
+          FIGMA_FILE_KEY: ${{ vars.FIGMA_FILE_KEY || '7D3oztRlYRvvhWlceWUiEj' }}
+          FIGMA_SVG_IDS: ${{ inputs.svg_ids }}
           FIGMA_PAGES: ${{ inputs.pages }}
       - name: Commit design exports
         run: |
           git config user.name "vaiza-bot"
           git config user.email "actions@users.noreply.github.com"
+          git add design/figma design/frames design/assets 2>/dev/null || true
           git add design/figma design/frames
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "design: sync from Figma"

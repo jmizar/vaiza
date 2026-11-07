@@ -7,7 +7,7 @@
 // Env: FIGMA_TOKEN (personal access token, read-only), FIGMA_FILE_KEY (from the file URL)
 // Optional: FIGMA_PAGES="Page 1,Flows" (limit pages) · FIGMA_SCALE=2 · FIGMA_MAX_CALLS=6
 // Run locally: FIGMA_TOKEN=... FIGMA_FILE_KEY=... npm run figma:sync  (normally run by GitHub Actions)
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 
 const token = process.env.FIGMA_TOKEN
 const fileKey = process.env.FIGMA_FILE_KEY
@@ -59,6 +59,15 @@ function collectScreens(node, page, board, out, depth = 0) {
   }
 }
 
+function findNode(node, id) {
+  if (node.id === id) return node
+  for (const c of node.children ?? []) {
+    const hit = findNode(c, id)
+    if (hit) return hit
+  }
+  return null
+}
+
 const file = await figma(`/files/${fileKey}?geometry=omit`)
 mkdirSync('design/figma', { recursive: true })
 writeFileSync('design/figma/file.json', JSON.stringify(file))
@@ -91,8 +100,28 @@ for (let i = 0; i < screens.length; i += BATCH) {
   }
 }
 
+// Optional SVG export of specific nodes (illustrations, icons, flags): one extra call.
+let svgIds = (process.env.FIGMA_SVG_IDS ?? '').split(',').map((s) => s.trim()).filter(Boolean)
+try {
+  const req = readFileSync('design/sync-request.txt', 'utf8')
+  const line = req.split('\n').find((l) => l.startsWith('svg:'))
+  if (line) svgIds = [...new Set([...svgIds, ...line.slice(4).split(',').map((s) => s.trim()).filter(Boolean)])]
+} catch { /* no request file */ }
+const assets = []
+if (svgIds.length && tier1Calls < maxCalls) {
+  const { images } = await figma(`/images/${fileKey}?ids=${svgIds.join(',')}&format=svg&svg_include_id=false&svg_outline_text=false`)
+  mkdirSync('design/assets', { recursive: true })
+  for (const id of svgIds) {
+    if (!images[id]) continue
+    const node = findNode(file.document, id)
+    const path = `design/assets/${slug(node?.name ?? 'asset')}--${id.replace(/[:;]/g, '-')}.svg`
+    writeFileSync(path, await (await fetch(images[id])).text())
+    assets.push({ id, name: node?.name, file: path })
+  }
+}
+
 writeFileSync(
   'design/figma/index.json',
-  JSON.stringify({ fileKey, fileName: file.name, lastModified: file.lastModified, syncedAt: new Date().toISOString(), screens: index }, null, 2),
+  JSON.stringify({ fileKey, fileName: file.name, lastModified: file.lastModified, syncedAt: new Date().toISOString(), screens: index, assets }, null, 2),
 )
 console.log(`Saved ${index.length} screens. Figma Tier-1 calls used: ${tier1Calls}`)
