@@ -46,3 +46,6 @@ export const sheet: Variants = {
 export function haptic(pattern: number | number[] = 8) {
   if (typeof navigator !== 'undefined' && 'vibrate' in navigator) navigator.vibrate(pattern)
 }
+
+/** Screen push/pop and modal presentation (iOS-like curve, no overshoot). */
+export const navTransition: Transition = { duration: 0.42, ease: [0.32, 0.72, 0, 1] }

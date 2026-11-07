@@ -2,31 +2,218 @@
 @import '@fontsource-variable/inter';
 @import './tokens.css';
 
+/* ------------------------------------------------------------------ base */
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
   html {
     -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    background: var(--color-surface);
   }
   body {
-    @apply bg-bg font-sans text-body text-ink;
-    /* iOS-style: no grey tap flash, safe areas respected. */
+    margin: 0;
+    /* App-like: the page itself never scrolls or rubber-bands; each screen scrolls inside. */
+    overflow: hidden;
+    overscroll-behavior: none;
+    background: var(--color-surface);
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
-      env(safe-area-inset-left);
+    text-rendering: optimizeLegibility;
   }
-  /* Visible focus for keyboard and switch-control users; hidden for touch. */
+  button,
+  a,
+  [role='button'] {
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  /* iOS zooms into inputs under 16px; keep them at 16. */
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  /* Our search screens have their own close button; hide the browser's clear "x". */
+  input[type='search']::-webkit-search-cancel-button {
+    appearance: none;
+  }
   :focus-visible {
-    outline: 2px solid var(--color-info);
+    outline: 2px solid var(--color-line-focus);
     outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-tint-best);
   }
 }
 
-/* The app is phone-first. On wider screens it sits in a centred phone-width column. */
-.app-column {
+/* ------------------------------------------------------------------ device frame
+   Phones: full width, full height, safe areas from the OS.
+   Desktop: the widest phone (440px) centred; the rest of the page is plain white.
+   In desktop preview we draw a status bar and home indicator so screens read like the Figma frames. */
+.device {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  position: relative;
+  width: 100%;
   max-width: var(--size-app-max-width);
+  height: var(--app-height, 100dvh);
   margin-inline: auto;
-  min-height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-canvas);
+}
+/* Embedded (artifact frame): the host pads for the OS bars, so fill the frame and don't add insets. */
+html[data-embed='true'] .device {
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  height: 100%;
+}
+.device[data-preview='true'] {
+  --safe-top: var(--size-status-bar);
+  --safe-bottom: var(--size-home-indicator);
+  box-shadow: 0 0 0 1px var(--color-line-subtle);
+}
+
+/* ------------------------------------------------------------------ screen layout
+   A screen = scroll area + optional top bar + optional bottom bar, all inside the device.
+   Bars float over content (content scrolls underneath and fades out), like iOS. */
+.screen {
+  position: absolute;
+  inset: 0;
+  background: var(--color-canvas);
+  overflow: hidden;
+}
+.screen[data-tone='navy'] {
+  background: var(--color-navy);
+}
+.screen-scroll {
+  position: absolute;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* --top-h / --bottom-h are the measured bars (safe area included); without a bar, the safe area. */
+  padding-top: var(--top-h, var(--safe-top));
+  padding-bottom: calc(var(--bottom-h, var(--safe-bottom)) + 24px);
+}
+.screen-scroll::-webkit-scrollbar {
+  display: none;
+}
+.screen-top {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: var(--z-header);
+  padding-top: var(--safe-top);
+  pointer-events: none;
+}
+.screen-top > * {
+  pointer-events: auto;
+}
+.screen-top[data-fade='true']::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -12px;
+  background: var(--gradient-fade-top);
+  pointer-events: none;
+  z-index: -1;
+}
+.screen-bottom {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: var(--z-footer);
+  padding-bottom: max(calc(var(--safe-bottom) - 14px), 16px);
+  pointer-events: none;
+}
+.screen-bottom > * {
+  pointer-events: auto;
+}
+/* Scroll-edge fade above bottom bars (Figma: "Bottom Gradient", 106px). */
+.screen-bottom[data-fade='true']::before {
+  content: '';
+  position: absolute;
+  inset: -37px 0 0;
+  background: var(--gradient-fade-bottom);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ------------------------------------------------------------------ materials */
+.glass {
+  background: var(--glass-fallback);
+  border: 1px solid var(--glass-stroke);
+  box-shadow: var(--shadow-glass);
+}
+.glass-dark {
+  background: var(--glass-fallback-dark);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: var(--glass-tint);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
+  }
+  .glass-dark {
+    background: var(--glass-tint-dark);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(160%);
+    border: 1px solid transparent;
+    background-image: linear-gradient(var(--glass-tint-dark), var(--glass-tint-dark)), var(--gradient-glass-dark-stroke);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass-dark {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .glass {
+    background: var(--glass-fallback) !important;
+  }
+}
+html[data-reduce-transparency='true'] .glass,
+html[data-reduce-transparency='true'] .glass-dark {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+html[data-reduce-transparency='true'] .glass {
+  background: var(--glass-fallback) !important;
+}
+
+.bg-brand-gradient {
+  background-image: var(--gradient-brand);
+}
+
+/* Section labels (MY TRIPS, TRIP STATUS). Not called .overline: Tailwind's `overline` = text-decoration.: Text xs bold, 1px tracking, uppercase. */
+.section-label {
+  font-size: var(--text-xs);
+  line-height: var(--text-xs--line-height);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* Hit area at least 44px without changing the visual (Apple HIG). */
+.hit-44 {
+  position: relative;
+}
+.hit-44::after {
+  content: '';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+  transform: translate(-50%, -50%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -35,5 +222,18 @@
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+}
+
+/* ------------------------------------------------------------------ stage (desktop page around the device) */
+.app-stage {
+  position: relative;
+  height: var(--app-height, 100dvh);
+  background: var(--color-surface);
+}
+
+/* Navy-header screens: rubber-band at the top shows navy, at the bottom shows the light sheet. */
+.screen-scroll--split {
+  background: linear-gradient(to bottom, var(--color-navy) 50%, var(--color-canvas) 50%);
 }

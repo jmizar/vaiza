@@ -114,8 +114,7 @@ export function findWindows(members: Member[], opts: WindowOptions = {}): Window
     }
   }
 
-  const rank = (a: TravelWindow, b: TravelWindow) =>
-    b.memberIds.length - a.memberIds.length || b.tripDays - a.tripDays || toDay(a.start) - toDay(b.start)
+  const rank = (a: TravelWindow, b: TravelWindow) => b.memberIds.length - a.memberIds.length || b.tripDays - a.tripDays || toDay(a.start) - toDay(b.start)
 
   return { windows: [...full, ...partial].sort(rank).slice(0, limit), respondedIds, pendingIds }
 }
@@ -165,9 +164,12 @@ export function upgradeHints(members: Member[], opts: HintOptions = {}): Upgrade
   const all = [...sets.values()].flatMap((s) => [...s])
   const lo = Math.min(...all)
   const hi = Math.max(...all)
-  const best = Math.max(0, ...findWindows(responded, { minDays: 1, limit: 1000 }).windows
-    .filter((w) => w.memberIds.length === responded.length)
-    .map((w) => w.lengthDays))
+  const best = Math.max(
+    0,
+    ...findWindows(responded, { minDays: 1, limit: 1000 })
+      .windows.filter((w) => w.memberIds.length === responded.length)
+      .map((w) => w.lengthDays),
+  )
 
   const bestBySet = new Map<string, UpgradeHint>()
   for (let s = lo; s <= hi; s++) {
@@ -211,7 +213,5 @@ export function upgradeHints(members: Member[], opts: HintOptions = {}): Upgrade
     }
   }
 
-  return [...bestBySet.values()]
-    .sort((a, b) => a.memberIds.length - b.memberIds.length || b.gainDays - a.gainDays || a.extraDays - b.extraDays)
-    .slice(0, limit)
+  return [...bestBySet.values()].sort((a, b) => a.memberIds.length - b.memberIds.length || b.gainDays - a.gainDays || a.extraDays - b.extraDays).slice(0, limit)
 }

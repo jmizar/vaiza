@@ -5,25 +5,30 @@ decisions, so nothing here has been changed. Values are approximate until figma-
 
 WCAG 2.2 AA: normal text 4.5:1 · large text (≥24px, or ≥18.66px bold) 3:1 · UI component outlines 3:1.
 
-**11 of 15 pairings flagged.**
+**12 of 20 pairings flagged.**
 
 | Pairing | Tokens | Used for | Ratio | Needs | Status |
 |---|---|---|---|---|---|
-| Primary text | `ink` on `bg` | Titles, body on app background | 16.14:1 | 4.5:1 | pass |
-| Body text | `ink-2` on `bg` | Onboarding body, helper text | 9.04:1 | 4.5:1 | pass |
-| Section label | `ink-3` on `bg` | YOUR DETAILS, MY TRIPS | 4.46:1 | 4.5:1 | FLAG |
-| Meta text on card | `ink-4` on `surface` | Card meta (members, city) | 3.26:1 | 4.5:1 | FLAG |
-| Placeholder | `placeholder` on `surface` | Input placeholder | 2.51:1 | 4.5:1 | FLAG |
-| Button label (gradient start) | `on-brand` on `brand-start` | Primary button | 2.92:1 | 4.5:1 | FLAG |
-| Button label (gradient end) | `on-brand` on `brand-end` | Primary button | 2.64:1 | 4.5:1 | FLAG |
-| Brand text on background | `brand` on `bg` | Links: Add dates, Hint, Waiting | 2.77:1 | 4.5:1 | FLAG |
-| Disabled button label | `on-brand` on `brand-disabled` | Disabled primary button | 1.76:1 | 4.5:1 | exempt (disabled) |
-| Chip: Voting | `info` on `info-tint` | Status chip | 4.12:1 | 4.5:1 | FLAG |
-| Chip: Ready | `success` on `success-tint` | Status chip | 3.06:1 | 4.5:1 | FLAG |
-| Chip: Draft | `neutral` on `neutral-tint` | Status chip | 3.35:1 | 4.5:1 | FLAG |
-| Text on navy header | `on-navy` on `navy` | Trip header, splash | 12.12:1 | 4.5:1 | pass |
-| Input border | `border` on `surface` | Field outline (UI component, 3:1) | 1.21:1 | 3:1 | FLAG |
-| Inactive page dot | `dot` on `bg` | Onboarding dots (UI component, 3:1) | 1.38:1 | 3:1 | FLAG |
+| Primary text | `ink` on `canvas` | Titles, body on the app background | 16.16:1 | 4.5:1 | pass |
+| List titles | `ink-title` on `surface` | Card titles, member names | 14.61:1 | 4.5:1 | pass |
+| Secondary text | `ink-secondary` on `canvas` | Onboarding body, notices | 9.05:1 | 4.5:1 | pass |
+| Tertiary text | `ink-tertiary` on `canvas` | Helper text under fields | 6.83:1 | 4.5:1 | pass |
+| Muted text on canvas | `ink-muted` on `canvas` | Section labels (MY TRIPS), meta | 4.48:1 | 4.5:1 | FLAG |
+| Muted text on card | `ink-muted` on `surface` | Card meta (members, city, days) | 4.68:1 | 4.5:1 | pass |
+| Subtle text | `ink-subtle` on `surface` | Upcoming step descriptions | 2.52:1 | 4.5:1 | FLAG |
+| Placeholder | `ink-placeholder` on `surface` | Input placeholder | 2.52:1 | 4.5:1 | FLAG |
+| Brand text | `ink-brand` on `surface` | 'Add dates', active tab label | 3.14:1 | 4.5:1 | FLAG |
+| Warning text | `ink-warning` on `surface` | 'Waiting' on member rows | 3.49:1 | 4.5:1 | FLAG |
+| Button label on gradient (red end) | `on-brand` on `brand` | Primary button | 2.96:1 | 4.5:1 | FLAG |
+| Button label on gradient (orange end) | `on-brand` on `brand-light` | Primary button | 2.45:1 | 4.5:1 | FLAG |
+| Chip: Ready | `success-ink` on `surface` | Status chip (tint is translucent; measured on white) | 4.01:1 | 4.5:1 | FLAG |
+| Chip: Voting | `info-ink` on `info-tint` | Status chip | 4.05:1 | 4.5:1 | FLAG |
+| Chip: Draft | `neutral-ink` on `neutral-tint` | Status chip | 4.16:1 | 4.5:1 | FLAG |
+| Chip: Provisional | `provisional-ink` on `provisional-tint` | Travel window badge | 9.45:1 | 4.5:1 | pass |
+| Text on navy | `ink-on-dark` on `navy` | Trip header title | 12.13:1 | 4.5:1 | pass |
+| Muted text on navy | `ink-on-dark-muted` on `navy` | Trip header meta | 9.85:1 | 4.5:1 | pass |
+| Input border | `line-input` on `surface` | Field outline (UI component, 3:1) | 1.23:1 | 3:1 | FLAG |
+| Inactive page dot | `line` on `canvas` | Onboarding dots (UI component, 3:1) | 1.38:1 | 3:1 | FLAG |
 
 ## Other flags (not colour)
 - Thumbs up/down buttons on voting cards render at ~28px. Apple's minimum touch target is 44×44pt, so

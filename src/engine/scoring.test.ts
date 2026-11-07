@@ -7,20 +7,51 @@ const MADRID = { lat: 40.4168, lon: -3.7038 }
 const BARCELONA = { lat: 41.3874, lon: 2.1686 }
 
 const lisbon: Destination = {
-  id: 'lisbon-pt', name: 'Lisbon', country: 'Portugal', countryCode: 'PT', continent: 'europe', iata: 'LIS',
-  lat: 38.7223, lon: -9.1393, costPerDay: 85, activities: ['beach', 'culture', 'gastronomy', 'nightlife'], bestMonths: [4, 5, 6, 7, 8, 9, 10],
+  id: 'lisbon-pt',
+  name: 'Lisbon',
+  country: 'Portugal',
+  countryCode: 'PT',
+  continent: 'europe',
+  iata: 'LIS',
+  lat: 38.7223,
+  lon: -9.1393,
+  costPerDay: 85,
+  activities: ['beach', 'culture', 'gastronomy', 'nightlife'],
+  bestMonths: [4, 5, 6, 7, 8, 9, 10],
 }
 const reykjavik: Destination = {
-  id: 'reykjavik-is', name: 'Reykjavik', country: 'Iceland', countryCode: 'IS', continent: 'europe', iata: 'KEF',
-  lat: 64.1466, lon: -21.9426, costPerDay: 170, activities: ['adventure', 'relax'], bestMonths: [6, 7, 8],
+  id: 'reykjavik-is',
+  name: 'Reykjavik',
+  country: 'Iceland',
+  countryCode: 'IS',
+  continent: 'europe',
+  iata: 'KEF',
+  lat: 64.1466,
+  lon: -21.9426,
+  costPerDay: 170,
+  activities: ['adventure', 'relax'],
+  bestMonths: [6, 7, 8],
 }
 const bangkok: Destination = {
-  id: 'bangkok-th', name: 'Bangkok', country: 'Thailand', countryCode: 'TH', continent: 'asia', iata: 'BKK',
-  lat: 13.7563, lon: 100.5018, costPerDay: 50, activities: ['culture', 'gastronomy', 'nightlife'], bestMonths: [11, 12, 1, 2],
+  id: 'bangkok-th',
+  name: 'Bangkok',
+  country: 'Thailand',
+  countryCode: 'TH',
+  continent: 'asia',
+  iata: 'BKK',
+  lat: 13.7563,
+  lon: 100.5018,
+  costPerDay: 50,
+  activities: ['culture', 'gastronomy', 'nightlife'],
+  bestMonths: [11, 12, 1, 2],
 }
 
 const m = (id: string, origin = MADRID, activities: Member['activities'] = []): Member => ({
-  id, name: id, origin, availableDates: ['2026-07-12'], activities,
+  id,
+  name: id,
+  origin,
+  availableDates: ['2026-07-12'],
+  activities,
 })
 
 describe('geo', () => {

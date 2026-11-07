@@ -34,9 +34,7 @@ export function tallyVotes(
   confirmedIds: string[],
   matchScore: Record<string, number> = {},
 ): VotingResult {
-  const tallies = new Map<string, Tally>(
-    candidateIds.map((id) => [id, { destinationId: id, up: [], down: [], net: 0 }]),
-  )
+  const tallies = new Map<string, Tally>(candidateIds.map((id) => [id, { destinationId: id, up: [], down: [], net: 0 }]))
   for (const v of votes) {
     const t = tallies.get(v.destinationId)
     if (!t || !memberIds.includes(v.memberId)) continue
@@ -45,16 +43,11 @@ export function tallyVotes(
   }
 
   const ranking = [...tallies.values()].sort(
-    (a, b) =>
-      b.net - a.net ||
-      b.up.length - a.up.length ||
-      (matchScore[b.destinationId] ?? 0) - (matchScore[a.destinationId] ?? 0),
+    (a, b) => b.net - a.net || b.up.length - a.up.length || (matchScore[b.destinationId] ?? 0) - (matchScore[a.destinationId] ?? 0),
   )
 
   const top = ranking[0]
-  const tiedIds = top
-    ? ranking.filter((t) => t.net === top.net && t.up.length === top.up.length).map((t) => t.destinationId)
-    : []
+  const tiedIds = top ? ranking.filter((t) => t.net === top.net && t.up.length === top.up.length).map((t) => t.destinationId) : []
   const anyVotes = votes.length > 0
 
   return {

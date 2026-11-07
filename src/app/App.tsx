@@ -10,9 +10,7 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       {/* "user" = follow the OS Reduce Motion setting. */}
       <MotionConfig reducedMotion="user">
-        <div className="app-column">
-          <RouterProvider router={router} />
-        </div>
+        <RouterProvider router={router} />
       </MotionConfig>
     </QueryClientProvider>
   )

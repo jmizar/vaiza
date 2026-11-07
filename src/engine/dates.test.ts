@@ -23,7 +23,11 @@ describe('date helpers', () => {
 describe('findWindows', () => {
   // Mirrors the Figma "Best matches" example.
   const john = member('john', [...dateRange('2026-07-10', '2026-07-18'), ...dateRange('2026-07-26', '2026-07-28'), ...dateRange('2026-08-03', '2026-08-06')])
-  const gabriel = member('gabriel', [...dateRange('2026-07-12', '2026-07-20'), ...dateRange('2026-07-26', '2026-07-29'), ...dateRange('2026-08-03', '2026-08-06')])
+  const gabriel = member('gabriel', [
+    ...dateRange('2026-07-12', '2026-07-20'),
+    ...dateRange('2026-07-26', '2026-07-29'),
+    ...dateRange('2026-08-03', '2026-08-06'),
+  ])
   const pablo = member('pablo', [...dateRange('2026-07-12', '2026-07-18'), ...dateRange('2026-07-25', '2026-07-28')])
 
   it('ranks full-group windows first, longest first', () => {

@@ -10,5 +10,10 @@ export const motionTokens = {
     "damping": 34,
     "mass": 1
   },
+  "spring-soft": {
+    "stiffness": 260,
+    "damping": 30,
+    "mass": 1
+  },
   "stagger": "30ms"
 } as const

@@ -13,17 +13,7 @@ export const BUDGET_TIER_MAX: Record<BudgetTier, number> = {
 }
 
 /** Matches the activity chips in the Figma "Your preferences" screen. */
-export const ACTIVITIES = [
-  'beach',
-  'mountain',
-  'culture',
-  'relax',
-  'gastronomy',
-  'nightlife',
-  'shopping',
-  'adventure',
-  'ski',
-] as const
+export const ACTIVITIES = ['beach', 'mountain', 'culture', 'relax', 'gastronomy', 'nightlife', 'shopping', 'adventure', 'ski'] as const
 export type Activity = (typeof ACTIVITIES)[number]
 
 export interface LatLon {

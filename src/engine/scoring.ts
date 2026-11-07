@@ -1,14 +1,6 @@
 import { toDay, fromDay } from './dates'
 import { estimateFlightHours, maxFlightHoursFor } from './geo'
-import {
-  BUDGET_TIER_MAX,
-  type Activity,
-  type BudgetCounts,
-  type BudgetTier,
-  type Destination,
-  type Group,
-  type ISODate,
-} from './types'
+import { BUDGET_TIER_MAX, type Activity, type BudgetCounts, type BudgetTier, type Destination, type Group, type ISODate } from './types'
 
 /** Weights of the 0-100 match score. Must add up to 1. */
 export const SCORE_WEIGHTS = { activities: 0.4, budget: 0.3, season: 0.15, flight: 0.15 } as const
@@ -61,10 +53,7 @@ export function scoreDestination(dest: Destination, group: Group, window: TripWi
   // Activities: for each member who picked activities, the share of their picks this place offers.
   const withPrefs = members.filter((m) => m.activities.length > 0)
   const activityScore = withPrefs.length
-    ? withPrefs.reduce(
-        (sum, m) => sum + m.activities.filter((a) => dest.activities.includes(a)).length / m.activities.length,
-        0,
-      ) / withPrefs.length
+    ? withPrefs.reduce((sum, m) => sum + m.activities.filter((a) => dest.activities.includes(a)).length / m.activities.length, 0) / withPrefs.length
     : 0.6 // nobody expressed a preference: neutral
   const activities = dest.activities
     .map((activity) => ({
@@ -89,10 +78,7 @@ export function scoreDestination(dest: Destination, group: Group, window: TripWi
 
   const score = Math.round(
     100 *
-      (SCORE_WEIGHTS.activities * activityScore +
-        SCORE_WEIGHTS.budget * budgetScore +
-        SCORE_WEIGHTS.season * seasonScore +
-        SCORE_WEIGHTS.flight * flightScore),
+      (SCORE_WEIGHTS.activities * activityScore + SCORE_WEIGHTS.budget * budgetScore + SCORE_WEIGHTS.season * seasonScore + SCORE_WEIGHTS.flight * flightScore),
   )
 
   return {
@@ -110,12 +96,7 @@ export function scoreDestination(dest: Destination, group: Group, window: TripWi
 }
 
 /** The ranked list shown in "Where do you want to go?" (Figma shows 7). */
-export function suggestDestinations(
-  destinations: Destination[],
-  group: Group,
-  window: TripWindow,
-  limit = 7,
-): DestinationMatch[] {
+export function suggestDestinations(destinations: Destination[], group: Group, window: TripWindow, limit = 7): DestinationMatch[] {
   return destinations
     .map((d) => scoreDestination(d, group, window))
     .filter((m) => m.eligible)
