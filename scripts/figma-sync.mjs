@@ -17,7 +17,7 @@ if (!token || !fileKey) {
 }
 const scale = Number(process.env.FIGMA_SCALE ?? 2)
 const maxCalls = Number(process.env.FIGMA_MAX_CALLS ?? 6)
-const pageFilter = process.env.FIGMA_PAGES?.split(',').map((s) => s.trim().toLowerCase())
+const pageFilter = (process.env.FIGMA_PAGES ?? '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean)
 const BATCH = 40
 let tier1Calls = 0
 
@@ -46,12 +46,16 @@ const isPhone = (n) =>
   (n.type === 'FRAME' || n.type === 'COMPONENT' || n.type === 'INSTANCE') &&
   n.absoluteBoundingBox &&
   n.absoluteBoundingBox.width >= 340 && n.absoluteBoundingBox.width <= 440 &&
-  n.absoluteBoundingBox.height >= 640 && n.absoluteBoundingBox.height <= 1000
+  n.absoluteBoundingBox.height >= 640 && n.absoluteBoundingBox.height <= 2400
 
 function collectScreens(node, page, board, out, depth = 0) {
   for (const child of node.children ?? []) {
     if (isPhone(child)) {
       out.push({ id: child.id, name: child.name, page, board, width: child.absoluteBoundingBox.width, height: child.absoluteBoundingBox.height })
+    } else if (node.type === 'SECTION' && child.name !== 'Screen Label' && child.absoluteBoundingBox &&
+      ['FRAME', 'COMPONENT', 'COMPONENT_SET', 'INSTANCE', 'RECTANGLE', 'GROUP'].includes(child.type) &&
+      child.absoluteBoundingBox.width >= 40) {
+      out.push({ id: child.id, name: child.name, page, board: `${board}/reference`, width: child.absoluteBoundingBox.width, height: child.absoluteBoundingBox.height })
     } else if (depth < 4 && child.children) {
       const nextBoard = child.type === 'SECTION' || (depth === 0 && child.type === 'FRAME') ? child.name : board
       collectScreens(child, page, nextBoard, out, depth + 1)
@@ -68,13 +72,15 @@ function findNode(node, id) {
   return null
 }
 
-const file = await figma(`/files/${fileKey}?geometry=omit`)
+const reuse = (() => { try { return readFileSync('design/sync-request.txt', 'utf8').includes('reuse-file') } catch { return false } })()
+const file = reuse ? JSON.parse(readFileSync('design/figma/file.json', 'utf8')) : await figma(`/files/${fileKey}?geometry=omit`)
+if (reuse) console.log('Reusing committed design/figma/file.json')
 mkdirSync('design/figma', { recursive: true })
 writeFileSync('design/figma/file.json', JSON.stringify(file))
 
 const screens = []
 for (const page of file.document.children) {
-  if (pageFilter && !pageFilter.includes(page.name.toLowerCase())) continue
+  if (pageFilter.length && !pageFilter.includes(page.name.toLowerCase())) continue
   collectScreens(page, page.name, page.name, screens)
 }
 const imageCalls = Math.ceil(screens.length / BATCH)
@@ -83,6 +89,10 @@ if (tier1Calls + imageCalls > maxCalls) {
   throw new Error(`Would use ${tier1Calls + imageCalls} Figma calls (limit ${maxCalls}). Set FIGMA_PAGES or FIGMA_MAX_CALLS.`)
 }
 
+if (process.env.FIGMA_DRY) {
+  for (const s of screens) console.log(`${s.board} | ${s.name} | ${s.id} | ${Math.round(s.width)}x${Math.round(s.height)}`)
+  process.exit(0)
+}
 rmSync('design/frames', { recursive: true, force: true })
 const index = []
 for (let i = 0; i < screens.length; i += BATCH) {
