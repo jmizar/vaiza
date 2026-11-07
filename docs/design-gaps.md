@@ -1,7 +1,9 @@
 # Design gaps (Figma to-do for Jaime)
 
 Screens or states the build needs that aren't in Figma yet. The full, prioritised version (with
-statuses Jaime ticks) is the design audit doc: https://claude.ai/artifact/UuWjGetLMeYKZqLNx7xCRN Until a gap is designed, the builder
+statuses Jaime ticks) is the design audit doc: https://claude.ai/artifact/UuWjGetLMeYKZqLNx7xCRN
+
+Until a gap is designed, the builder
 ships a plain, clearly marked placeholder and lists it in the review card. Tick when designed.
 
 ## Voting & results (needed for M3)
