@@ -1,6 +1,7 @@
 # Design gaps (Figma to-do for Jaime)
 
-Screens or states the build needs that aren't in Figma yet. Until a gap is designed, the builder
+Screens or states the build needs that aren't in Figma yet. The full, prioritised version (with
+statuses Jaime ticks) is the design audit doc: https://claude.ai/artifact/UuWjGetLMeYKZqLNx7xCRN Until a gap is designed, the builder
 ships a plain, clearly marked placeholder and lists it in the review card. Tick when designed.
 
 ## Voting & results (needed for M3)
@@ -31,3 +32,15 @@ ships a plain, clearly marked placeholder and lists it in the review card. Tick 
 - [ ] **Copy:** splash subcopy still "Subcopy goes here".
 - [ ] **Confirm:** climate & regions preferences dropped on purpose (old prototype had them).
 - [ ] **Confirm:** display currency: Figma shows $, data is in €.
+
+## Added by the 7 Nov design audit
+- [ ] **Late joiner:** arrives after dates lock: "Can you make 12–18 July?" Yes/No.
+- [ ] **Keep your trips:** optional email link / Apple sign-in after the first trip (iPhone storage isolation).
+- [ ] **Nothing fits:** no destination matches budget or flight time, with options to widen.
+- [ ] **Organiser hand-over** when the organiser leaves or goes quiet; "Plan without Pablo" for ghosts.
+- [ ] **Booking hub:** "I've booked my flight" tick per member; add to calendar; share summary.
+- [ ] **Hints inline** on the travel window with an "Ask Gabriel" share button.
+- [ ] **Home chips as next actions:** Add your dates / Vote now / Waiting for 2 / Ready; unread dot.
+- [ ] **Scrolling multi-month calendar** with connected ranges; past days disabled.
+- [ ] **Lock confirmations + Unlock** for dates and destination.
+- [ ] **Settings:** add a "Reduce transparency" switch (Safari can't detect the iOS setting).
