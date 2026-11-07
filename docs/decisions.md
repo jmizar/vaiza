@@ -4,6 +4,11 @@ Newest first. Each entry: decision, why, and who decided. Don't relitigate witho
 
 | Date | Decision | Why | By |
 |---|---|---|---|
+| 2026-11-07 | Prototype is a hash-routed web app with an iOS-style stack navigator (push, pop, modal); screens below the top stay mounted. | Back keeps scroll and form state; works on any static host and in a preview frame. | Claude |
+| 2026-11-07 | Every screen = fixed frame + one scroll area + floating bars measured into insets; z-index from tokens. | Jaime: "nail viewport height, scrolling, what goes on top". One place to change it all. | Jaime + Claude |
+| 2026-11-07 | Desktop shows the widest phone (440px) centred on white; phones run full width and full height. | Jaime's call. | Jaime |
+| 2026-11-07 | Tokens named by role (surface, ink, line, tint, brand, status, vote, member) and emitted as CSS variables. | Global changes from one file; names say what a colour does, not what it is. | Claude |
+| 2026-11-07 | Gaps get minimal placeholders from existing components and are listed in the Prototype Tracker doc. | "Fill in some blanks, but minimal; don't change anything yet." | Jaime |
 | 2026-11-06 | **No colour changes; only flag contrast issues.** | Brand gradient is a design decision; Jaime will redesign if needed. Tokens make swapping trivial. | Jaime |
 | 2026-11-06 | Web app (PWA) first; Capacitor wrap for App Store / Play later. | Free iPhone testing (Add to Home Screen); invitees join from a link without installing; one codebase. | Jaime + Claude |
 | 2026-11-06 | Claude builds front end and back end. Nobody else on the team. | | Jaime |

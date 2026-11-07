@@ -1,6 +1,6 @@
 /* All user-facing strings, grouped by feature (CLAUDE.md rule 7). English first; a Spanish file
    with the same shape plugs in later. Copy is Figma's, verbatim, unless marked "filled" (a blank
-   we had to fill; listed in docs/prototype-tracker.md). */
+   we had to fill; listed in the "Vaiza Prototype Tracker" doc, https://claude.ai/artifact/Lk85cFhzjo2Gz9NnkCEqwV). */
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
 
