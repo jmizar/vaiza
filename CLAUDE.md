@@ -34,6 +34,12 @@ the spec, the Figma frames or a sensible default already answers.
 7. **Copy:** all user-facing strings in one place per feature (prep for Spanish). English first.
 8. Mobile-first: design width 375–430px; on desktop the app sits in a centred 480px column.
 
+## Skills (in .claude/skills)
+- `vaiza-design-audit`: audit Figma frames or built screens (heuristics, states, group stress tests)
+- `vaiza-liquid-glass`: where glass goes, CSS recipe, morph motion, accessibility fallbacks
+- `impeccable`: design commands (critique, audit, harden, onboard, animate, polish, clarify); product context in `PRODUCT.md`
+- `web-interface-guidelines`: Vercel's UI code rules (local snapshot) for code review
+
 ## Commands
 - `npm run dev`: local app · `npm run build`: production build
 - `npm run check`: typecheck + lint + unit tests + database rules (must pass before any PR)

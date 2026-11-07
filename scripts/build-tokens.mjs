@@ -23,6 +23,7 @@ v('spacing', '4px')
 const runtime = []
 const r = (name, value) => runtime.push(`  --${name}: ${value};`)
 for (const [k, val] of Object.entries(t.gradient)) r(`gradient-${k}`, val)
+for (const [k, val] of Object.entries(t.glass ?? {})) r(`glass-${k}`, val)
 for (const [k, val] of Object.entries(t.motion)) if (typeof val === 'string') r(`motion-${k}`, val)
 for (const [k, val] of Object.entries(t.size)) r(`size-${k}`, val)
 

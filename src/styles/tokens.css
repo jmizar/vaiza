@@ -72,6 +72,12 @@
 
 :root {
   --gradient-brand: linear-gradient(90deg, #EA755C 0%, #EC835C 100%);
+  --glass-tint-regular: rgba(255, 255, 255, 0.62);
+  --glass-tint-clear: rgba(255, 255, 255, 0.18);
+  --glass-fallback: rgba(255, 255, 255, 0.94);
+  --glass-stroke: rgba(255, 255, 255, 0.6);
+  --glass-dim: rgba(0, 0, 0, 0.35);
+  --glass-blur: 18px;
   --motion-fast: 150ms;
   --motion-base: 250ms;
   --motion-slow: 400ms;

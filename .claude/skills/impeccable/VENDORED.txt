@@ -1,0 +1,1 @@
+Vendored from github.com/pbakaus/impeccable @ 687bc38 on 2026-11-07 (Apache-2.0). Update: npx skills add pbakaus/impeccable
