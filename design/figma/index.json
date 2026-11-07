@@ -2,7 +2,941 @@
   "fileKey": "7D3oztRlYRvvhWlceWUiEj",
   "fileName": "Vaiza Mobile App",
   "lastModified": "2026-11-07T22:23:37Z",
-  "syncedAt": "2026-11-07T22:35:30.902Z",
-  "screens": [],
-  "assets": []
+  "syncedAt": "2026-11-07T22:38:07.169Z",
+  "screens": [
+    {
+      "id": "1:43922",
+      "name": "Mobile",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/mobile--1-43922.png"
+    },
+    {
+      "id": "1:43932",
+      "name": "Onboarding 4",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/onboarding-4--1-43932.png"
+    },
+    {
+      "id": "1:44001",
+      "name": "Onboarding 5",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/onboarding-5--1-44001.png"
+    },
+    {
+      "id": "1:44054",
+      "name": "Onboarding 6",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/onboarding-6--1-44054.png"
+    },
+    {
+      "id": "1:44123",
+      "name": "User_Details",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/user-details--1-44123.png"
+    },
+    {
+      "id": "1:44173",
+      "name": "User_Details",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/user-details--1-44173.png"
+    },
+    {
+      "id": "1:44205",
+      "name": "User_Details",
+      "page": "Page 1",
+      "board": "Journey Setup - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/journey-setup-ready/user-details--1-44205.png"
+    },
+    {
+      "id": "1:45318",
+      "name": "Home_Empty",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/home-empty--1-45318.png"
+    },
+    {
+      "id": "1:45436",
+      "name": "Home_Voting/Draft",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/home-voting-draft--1-45436.png"
+    },
+    {
+      "id": "1:45456",
+      "name": "Home_Trips",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/home-trips--1-45456.png"
+    },
+    {
+      "id": "1:45477",
+      "name": "Home_FAB_Open",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/home-fab-open--1-45477.png"
+    },
+    {
+      "id": "1:45530",
+      "name": "Profile",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/profile--1-45530.png"
+    },
+    {
+      "id": "1:45582",
+      "name": "Profile_From",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/home-profile-ready/profile-from--1-45582.png"
+    },
+    {
+      "id": "1:46462",
+      "name": "Action Bar_Brand",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 372.11322021484375,
+      "height": 100,
+      "file": "design/frames/home-profile-ready-reference/action-bar-brand--1-46462.png"
+    },
+    {
+      "id": "1:46485",
+      "name": "Bottom Nav_Default",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 415,
+      "height": 341,
+      "file": "design/frames/home-profile-ready-reference/bottom-nav-default--1-46485.png"
+    },
+    {
+      "id": "1:46498",
+      "name": "FAB",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 100,
+      "height": 100,
+      "file": "design/frames/home-profile-ready-reference/fab--1-46498.png"
+    },
+    {
+      "id": "1:46505",
+      "name": "Trip_Icon",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 232,
+      "height": 240,
+      "file": "design/frames/home-profile-ready-reference/trip-icon--1-46505.png"
+    },
+    {
+      "id": "1:46520",
+      "name": "Trip Card",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 383,
+      "height": 316,
+      "file": "design/frames/home-profile-ready-reference/trip-card--1-46520.png"
+    },
+    {
+      "id": "1:46682",
+      "name": "FAB_Open",
+      "page": "Page 1",
+      "board": "Home + Profile - Ready/reference",
+      "width": 343,
+      "height": 120,
+      "file": "design/frames/home-profile-ready-reference/fab-open--1-46682.png"
+    },
+    {
+      "id": "1:58706",
+      "name": "Trip_Window_User",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-user--1-58706.png"
+    },
+    {
+      "id": "1:58767",
+      "name": "Trip_Window_User_inProgress",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-user-inprogress--1-58767.png"
+    },
+    {
+      "id": "1:58834",
+      "name": "Trip_Window_User",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-user--1-58834.png"
+    },
+    {
+      "id": "1:58962",
+      "name": "Trip_Window_User",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-user--1-58962.png"
+    },
+    {
+      "id": "1:59087",
+      "name": "Trip_Window_Admin",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-admin--1-59087.png"
+    },
+    {
+      "id": "1:59154",
+      "name": "Trip_Window_Admin",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-admin--1-59154.png"
+    },
+    {
+      "id": "1:59227",
+      "name": "Trip_Window_Hint_User",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-hint-user--1-59227.png"
+    },
+    {
+      "id": "1:59322",
+      "name": "Trip_Window_Admin_Custom",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-admin-custom--1-59322.png"
+    },
+    {
+      "id": "1:59450",
+      "name": "Trip_Window_Admin_Custom",
+      "page": "Page 1",
+      "board": "Trip window - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-window-ready/trip-window-admin-custom--1-59450.png"
+    },
+    {
+      "id": "1:59542",
+      "name": "Horizontal tabs",
+      "page": "Page 1",
+      "board": "Trip window - Ready/reference",
+      "width": 383,
+      "height": 164,
+      "file": "design/frames/trip-window-ready-reference/horizontal-tabs--1-59542.png"
+    },
+    {
+      "id": "1:61938",
+      "name": "Swipe",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe--1-61938.png"
+    },
+    {
+      "id": "1:62011",
+      "name": "Swipe_Slider",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe-slider--1-62011.png"
+    },
+    {
+      "id": "1:62130",
+      "name": "Swipe_Yes",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe-yes--1-62130.png"
+    },
+    {
+      "id": "1:62199",
+      "name": "Swipe_No",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe-no--1-62199.png"
+    },
+    {
+      "id": "1:62268",
+      "name": "Destination Card-Main",
+      "page": "Page 1",
+      "board": "Voting- WIP/reference",
+      "width": 1085,
+      "height": 470.60919189453125,
+      "file": "design/frames/voting-wip-reference/destination-card-main--1-62268.png"
+    },
+    {
+      "id": "1:62299",
+      "name": "Destination Card-Behind",
+      "page": "Page 1",
+      "board": "Voting- WIP/reference",
+      "width": 739.4576416015625,
+      "height": 475.844482421875,
+      "file": "design/frames/voting-wip-reference/destination-card-behind--1-62299.png"
+    },
+    {
+      "id": "1:62708",
+      "name": "Swipe",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe--1-62708.png"
+    },
+    {
+      "id": "1:62784",
+      "name": "Swipe",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe--1-62784.png"
+    },
+    {
+      "id": "1:62859",
+      "name": "Swipe",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe--1-62859.png"
+    },
+    {
+      "id": "1:62924",
+      "name": "Swipe",
+      "page": "Page 1",
+      "board": "Voting- WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/voting-wip/swipe--1-62924.png"
+    },
+    {
+      "id": "1:66725",
+      "name": "List_User",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 974,
+      "file": "design/frames/confirmation-of-vote-wip/list-user--1-66725.png"
+    },
+    {
+      "id": "1:66786",
+      "name": "Mobile_List_User",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 974,
+      "file": "design/frames/confirmation-of-vote-wip/mobile-list-user--1-66786.png"
+    },
+    {
+      "id": "1:66847",
+      "name": "List_Admin",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 1098,
+      "file": "design/frames/confirmation-of-vote-wip/list-admin--1-66847.png"
+    },
+    {
+      "id": "1:66894",
+      "name": "Mobile_List_Admin",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 1098,
+      "file": "design/frames/confirmation-of-vote-wip/mobile-list-admin--1-66894.png"
+    },
+    {
+      "id": "1:66943",
+      "name": "List_Admin_Custom",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 1186,
+      "file": "design/frames/confirmation-of-vote-wip/list-admin-custom--1-66943.png"
+    },
+    {
+      "id": "1:66991",
+      "name": "Mobile_List_Admin_Custom",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 1186,
+      "file": "design/frames/confirmation-of-vote-wip/mobile-list-admin-custom--1-66991.png"
+    },
+    {
+      "id": "1:67041",
+      "name": "List_User",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/confirmation-of-vote-wip/list-user--1-67041.png"
+    },
+    {
+      "id": "1:67088",
+      "name": "Mobile_List_User",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/confirmation-of-vote-wip/mobile-list-user--1-67088.png"
+    },
+    {
+      "id": "1:67135",
+      "name": "List_Admin_Custom_Search",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/confirmation-of-vote-wip/list-admin-custom-search--1-67135.png"
+    },
+    {
+      "id": "1:67185",
+      "name": "Mobile_List_Admin_Custom_Search",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/confirmation-of-vote-wip/mobile-list-admin-custom-search--1-67185.png"
+    },
+    {
+      "id": "1:67235",
+      "name": "Destination Card",
+      "page": "Page 1",
+      "board": "Confirmation of vote - WIP/reference",
+      "width": 383,
+      "height": 308,
+      "file": "design/frames/confirmation-of-vote-wip-reference/destination-card--1-67235.png"
+    },
+    {
+      "id": "1:72094",
+      "name": "List_User",
+      "page": "Page 1",
+      "board": "Vote done - WIP",
+      "width": 375,
+      "height": 974,
+      "file": "design/frames/vote-done-wip/list-user--1-72094.png"
+    },
+    {
+      "id": "1:72155",
+      "name": "Screenshot 2026-06-16 at 4.37.58 PM 1",
+      "page": "Page 1",
+      "board": "Vote done - WIP/reference",
+      "width": 340,
+      "height": 812,
+      "file": "design/frames/vote-done-wip-reference/screenshot-2026-06-16-at-4-37-58-pm-1--1-72155.png"
+    },
+    {
+      "id": "1:72156",
+      "name": "Success_Screen",
+      "page": "Page 1",
+      "board": "Vote done - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/vote-done-wip/success-screen--1-72156.png"
+    },
+    {
+      "id": "1:72209",
+      "name": "Home_Trips",
+      "page": "Page 1",
+      "board": "Vote done - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/vote-done-wip/home-trips--1-72209.png"
+    },
+    {
+      "id": "1:72230",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Vote done - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/vote-done-wip/trip-screen-user--1-72230.png"
+    },
+    {
+      "id": "1:73544",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip Hub - WIP",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-hub-wip/trip-screen-user--1-73544.png"
+    },
+    {
+      "id": "1:73646",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip Hub - WIP",
+      "width": 375,
+      "height": 1352,
+      "file": "design/frames/trip-hub-wip/trip-screen-user--1-73646.png"
+    },
+    {
+      "id": "1:73735",
+      "name": "Booking Hub",
+      "page": "Page 1",
+      "board": "Trip Hub - WIP/reference",
+      "width": 383,
+      "height": 333,
+      "file": "design/frames/trip-hub-wip-reference/booking-hub--1-73735.png"
+    },
+    {
+      "id": "1:73775",
+      "name": "Screenshot 2026-07-21 at 11.59.24 AM 1",
+      "page": "Page 1",
+      "board": "Trip Hub - WIP/reference",
+      "width": 283,
+      "height": 582,
+      "file": "design/frames/trip-hub-wip-reference/screenshot-2026-07-21-at-11-59-24-am-1--1-73775.png"
+    },
+    {
+      "id": "1:47769",
+      "name": "Home_Voting/Draft",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/home-voting-draft--1-47769.png"
+    },
+    {
+      "id": "1:47789",
+      "name": "New_trip",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/new-trip--1-47789.png"
+    },
+    {
+      "id": "1:47841",
+      "name": "New_trip_Typing",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/new-trip-typing--1-47841.png"
+    },
+    {
+      "id": "1:47895",
+      "name": "New_trip",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/new-trip--1-47895.png"
+    },
+    {
+      "id": "1:47947",
+      "name": "New_trip",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/new-trip--1-47947.png"
+    },
+    {
+      "id": "1:48000",
+      "name": "Dates",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/dates--1-48000.png"
+    },
+    {
+      "id": "1:48129",
+      "name": "Dates",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/dates--1-48129.png"
+    },
+    {
+      "id": "1:48242",
+      "name": "Dates_AllMonth",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/dates-allmonth--1-48242.png"
+    },
+    {
+      "id": "1:48354",
+      "name": "Preferences",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/preferences--1-48354.png"
+    },
+    {
+      "id": "1:48438",
+      "name": "Preferences",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/preferences--1-48438.png"
+    },
+    {
+      "id": "1:48522",
+      "name": "New_trip_Destination",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/new-trip-destination--1-48522.png"
+    },
+    {
+      "id": "1:48572",
+      "name": "Dates_Origin",
+      "page": "Page 1",
+      "board": "Create new trip- Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/create-new-trip-ready/dates-origin--1-48572.png"
+    },
+    {
+      "id": "1:48624",
+      "name": "Connector",
+      "page": "Page 1",
+      "board": "Create new trip- Ready/reference",
+      "width": 58,
+      "height": 164,
+      "file": "design/frames/create-new-trip-ready-reference/connector--1-48624.png"
+    },
+    {
+      "id": "1:48629",
+      "name": "Connector",
+      "page": "Page 1",
+      "board": "Create new trip- Ready/reference",
+      "width": 164,
+      "height": 164,
+      "file": "design/frames/create-new-trip-ready-reference/connector--1-48629.png"
+    },
+    {
+      "id": "1:48634",
+      "name": "Icon_Button",
+      "page": "Page 1",
+      "board": "Create new trip- Ready/reference",
+      "width": 84,
+      "height": 154,
+      "file": "design/frames/create-new-trip-ready-reference/icon-button--1-48634.png"
+    },
+    {
+      "id": "1:52071",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52071.png"
+    },
+    {
+      "id": "1:52157",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52157.png"
+    },
+    {
+      "id": "1:52244",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52244.png"
+    },
+    {
+      "id": "1:52330",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52330.png"
+    },
+    {
+      "id": "1:52417",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52417.png"
+    },
+    {
+      "id": "1:52499",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52499.png"
+    },
+    {
+      "id": "1:52581",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-52581.png"
+    },
+    {
+      "id": "1:52663",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-52663.png"
+    },
+    {
+      "id": "1:52745",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52745.png"
+    },
+    {
+      "id": "1:52826",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-52826.png"
+    },
+    {
+      "id": "1:52907",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-52907.png"
+    },
+    {
+      "id": "1:52988",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-52988.png"
+    },
+    {
+      "id": "1:53069",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-53069.png"
+    },
+    {
+      "id": "1:53150",
+      "name": "Trip Screen_Admin",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-admin--1-53150.png"
+    },
+    {
+      "id": "1:53231",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-53231.png"
+    },
+    {
+      "id": "1:53312",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-53312.png"
+    },
+    {
+      "id": "1:53393",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-53393.png"
+    },
+    {
+      "id": "1:53474",
+      "name": "Trip Screen_User",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/trip-screen-user--1-53474.png"
+    },
+    {
+      "id": "1:53555",
+      "name": "Dates",
+      "page": "Page 1",
+      "board": "Trip screen - Ready",
+      "width": 375,
+      "height": 812,
+      "file": "design/frames/trip-screen-ready/dates--1-53555.png"
+    },
+    {
+      "id": "1:53684",
+      "name": "Connector",
+      "page": "Page 1",
+      "board": "Trip screen - Ready/reference",
+      "width": 141,
+      "height": 164,
+      "file": "design/frames/trip-screen-ready-reference/connector--1-53684.png"
+    },
+    {
+      "id": "1:53689",
+      "name": "Trip status - Journey A",
+      "page": "Page 1",
+      "board": "Trip screen - Ready/reference",
+      "width": 1939,
+      "height": 644,
+      "file": "design/frames/trip-screen-ready-reference/trip-status-journey-a--1-53689.png"
+    },
+    {
+      "id": "1:53710",
+      "name": "Members",
+      "page": "Page 1",
+      "board": "Trip screen - Ready/reference",
+      "width": 1171,
+      "height": 347,
+      "file": "design/frames/trip-screen-ready-reference/members--1-53710.png"
+    },
+    {
+      "id": "1:53915",
+      "name": "Trip status - Journey B",
+      "page": "Page 1",
+      "board": "Trip screen - Ready/reference",
+      "width": 1911,
+      "height": 344,
+      "file": "design/frames/trip-screen-ready-reference/trip-status-journey-b--1-53915.png"
+    },
+    {
+      "id": "1:53926",
+      "name": "Travel Window",
+      "page": "Page 1",
+      "board": "Trip screen - Ready/reference",
+      "width": 383,
+      "height": 304,
+      "file": "design/frames/trip-screen-ready-reference/travel-window--1-53926.png"
+    }
+  ],
+  "assets": [
+    {
+      "id": "1:43941",
+      "name": "Views / Images: Ratio",
+      "file": "design/assets/views-images-ratio--1-43941.svg"
+    },
+    {
+      "id": "1:44010",
+      "name": "Views / Images: Ratio",
+      "file": "design/assets/views-images-ratio--1-44010.svg"
+    },
+    {
+      "id": "1:44063",
+      "name": "Views / Images: Ratio",
+      "file": "design/assets/views-images-ratio--1-44063.svg"
+    },
+    {
+      "id": "1:46506",
+      "name": "Property 1=Flag",
+      "file": "design/assets/property-1-flag--1-46506.svg"
+    },
+    {
+      "id": "1:46508",
+      "name": "Property 1=Variant 1",
+      "file": "design/assets/property-1-variant-1--1-46508.svg"
+    },
+    {
+      "id": "1:46510",
+      "name": "Property 1=Variant 2",
+      "file": "design/assets/property-1-variant-2--1-46510.svg"
+    },
+    {
+      "id": "1:46512",
+      "name": "Property 1=Variant 3",
+      "file": "design/assets/property-1-variant-3--1-46512.svg"
+    },
+    {
+      "id": "1:46514",
+      "name": "Property 1=Variant 4",
+      "file": "design/assets/property-1-variant-4--1-46514.svg"
+    },
+    {
+      "id": "1:46516",
+      "name": "Property 1=Variant 5",
+      "file": "design/assets/property-1-variant-5--1-46516.svg"
+    },
+    {
+      "id": "1:46518",
+      "name": "Property 1=Variant 6",
+      "file": "design/assets/property-1-variant-6--1-46518.svg"
+    }
+  ]
 }
